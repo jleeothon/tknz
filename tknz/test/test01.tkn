@@ -1,0 +1,9 @@
+automaton String
+    start state A
+        with '"' goto B
+    state B
+        from "A" to "B" goto B
+        from "a" to "b" goto B
+        from "0" to "9" goto B
+        with '"' goto C
+    stop state C

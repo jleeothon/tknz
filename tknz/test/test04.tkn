@@ -1,0 +1,24 @@
+automaton Integer
+     state A // hey
+        from "0" to "9" goto B
+     state B // hello
+        from "0" to "9" goto B
+
+automaton String
+    start state initial-quote
+        with '"' goto B
+    state characters
+        from "A" to "B" goto B
+        from "a" to "b" goto B
+        from "0" to "9" goto B
+        with '"' goto end-quote
+    stop state end-quote
+
+// extraneous comments everywhere!
+automaton Identifier
+    start state 0
+        from "A" to "Z" goto 1
+        from "a" to "z" goto 1
+    stop state 1
+        from "A" to "Z" goto 1
+        from "a" to "z" goto 1

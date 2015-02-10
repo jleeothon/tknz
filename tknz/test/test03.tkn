@@ -1,0 +1,5 @@
+// this is a comment
+automaton A
+    start state B
+        with "A" goto C
+    stop state C
