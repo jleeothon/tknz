@@ -10,13 +10,13 @@ automatonModifiers : IGNORE ;
 stateModifier      : START | STOP ;
 
 AUTOMATON : 'automaton' ;
-STATE     : 'state';
-WITH      : 'with';
-FROM      : 'from';
-TO        : 'to';
-GOTO      : 'goto';
-START     : 'start';
-STOP      : 'stop';
+STATE     : 'state' ;
+WITH      : 'with' ;
+FROM      : 'from' ;
+TO        : 'to' ;
+GOTO      : 'goto' ;
+START     : 'start' ;
+STOP      : 'stop' ;
 
 Identifier : [A-Za-z0-9-_]+ ;
 IGNORE     : 'ignore' ;
