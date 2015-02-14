@@ -1,9 +1,16 @@
 grammar Tokenizer;
-s                : automaton* ;
+
+/** Defines one or more automatons. */
+s : automaton* ;
+
 automaton        : automatonModifiers* AUTOMATON Identifier state* ;
+
 state            : stateModifier* STATE Identifier transition*;
+
 transition       : setTransition | rangeTransition ;
+
 setTransition    : WITH StringLiteral GOTO Identifier ;
+
 rangeTransition  : FROM StringLiteral TO StringLiteral GOTO Identifier ;
 
 automatonModifiers : IGNORE ;

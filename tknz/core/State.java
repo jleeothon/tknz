@@ -21,8 +21,30 @@ public class State {
     }
 
     /**
+      * @return <c>true</c> if the <c>obj</c> is a state with the same name,
+      * <c>false</c> otherwise
+      */
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof State) {
+            return ((State)obj).name.equals(this.name);
+        }
+        return false;
+    }
+
+    /**
+      * @return the hash code of the <c>State</c>'s name
+      */
+    @Override
+    public int hashCode() {
+        return this.name.hashCode();
+    }
+
+    /**
       * @param c the input character
-      * @return 
+      * @return the <c>State</c> to which this state should transit with the
+      * given input, <c>null</c> if there are no transitions with the given
+      * input
       */
     public State tryOffer(char c) {
         for (Transition transition : this.transitions) {
@@ -32,6 +54,10 @@ public class State {
             }
         }
         return null;
+    }
+
+    public void addTransition(Transition transition) {
+        // TODO implement
     }
 
 }

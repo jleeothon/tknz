@@ -11,7 +11,7 @@ As a computational theory student, you usually learn to write deterministic fini
 
 Install Java 1.6 or higher. Don't forget the JDK.
 
-`tnkz` depends on ANTLR v4. Download `antlr-4.5-complete.jar` from the [ANTLR official site](https://theantlrguy.atlassian.net/wiki/display/ANTLR4/Getting+Started+with+ANTLR+v4). You don't need to follow the full instructions because the tknz workflow has been customized for uniformity.
+`tnkz` depends on ANTLR v4. Download `antlr-4.5-complete.jar` from the [ANTLR official site](https://theantlrguy.atlassian.net/wiki/display/ANTLR4/Getting+Started+with+ANTLR+v4). You don't need to follow the full instructions because the `tknz` workflow has been customized for uniformity.
 
 Download the source code using the GitHub desktop tool, or:
 
