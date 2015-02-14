@@ -1,13 +1,24 @@
 grammar Tokenizer;
 
+@header {
+
+package grammar;
+
+}
+
 /** Defines one or more automatons. */
 s : automaton* ;
 
-automaton        : automatonModifiers* AUTOMATON Identifier state* ;
+automaton
+: automatonModifiers* AUTOMATON Identifier state* ;
 
 state            : stateModifier* STATE Identifier transition*;
 
-transition       : setTransition | rangeTransition ;
+transition
+@after {
+    System.out.println("oi!");
+}
+: setTransition | rangeTransition ;
 
 setTransition    : WITH StringLiteral GOTO Identifier ;
 
