@@ -28,7 +28,7 @@ public class Automaton {
     /**
       * Creates a new state if it does not already exist.
       * @param name - the name of the state to put
-      * @return the existing or newly made <c>State</c>
+      * @return the existing or newly made <code>State</code>
       */
     public State addState(String name) {
         if (this.states.containsKey(name)) {
@@ -38,8 +38,17 @@ public class Automaton {
         return this.states.put(name, state);
     }
     
-    public State addState(State state) {
-    	return this.states.put(state.getName(), state);
+    /**
+     * Adds a state if there does not exist one with the same name. 
+     * @param state the state to add 
+     * @return <code>true</code> if the state was added
+     */
+    public boolean offerState(State state) {
+    	if (this.states.containsKey(name)) {
+    		return false;
+    	}
+    	this.states.put(state.getName(), state);
+    	return true;
     }
     
     public State getState(String name) {

@@ -2,18 +2,21 @@ package tknz.parser;
 
 import tknz.core.Automaton;
 import tknz.core.State;
-import tknz.core.Transition;
 import tknz.grammar.TknzParser;
 
-public class SymbolTableListener extends tknz.grammar.TknzBaseListener {
+/**
+ * Registers automatons and states so that {@link TransitionListener} can
+ * register transitions with the automatons and states pre-loaded.
+ * @author Johnny Lee
+ *
+ */
+public class StateListener extends tknz.grammar.TknzBaseListener {
 	
-	TknzTokenizer tokenizer;
-	State currentState;
-	Automaton currentAutomaton;
-	Transition currentTransition;
+	private TknzTokenizer tokenizer;
+	private State currentState;
+	private Automaton currentAutomaton;
 	
-	
-	public SymbolTableListener(TknzTokenizer tokenizer) {
+	public StateListener(TknzTokenizer tokenizer) {
 		super();
 		this.tokenizer = tokenizer;
 	}
@@ -30,8 +33,9 @@ public class SymbolTableListener extends tknz.grammar.TknzBaseListener {
 	}
 	
 	@Override public void enterState(TknzParser.StateContext ctx) {
-		this.currentAutomaton.addState(ctx.Identifier().getText());
-		// TODO
+		this.currentState = new State(ctx.getText());
+		this.currentAutomaton.offerState(this.currentState);
+		// TODO turn to logging information
 		System.out.println("Added state" + ctx.Identifier().getText());
 	}
 
