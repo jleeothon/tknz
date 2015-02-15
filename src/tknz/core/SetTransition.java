@@ -1,4 +1,4 @@
-package core;
+package tknz.core;
 
 public class SetTransition extends Transition {
 

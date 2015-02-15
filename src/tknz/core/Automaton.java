@@ -1,4 +1,4 @@
-package core;
+package tknz.core;
 
 import java.util.HashMap;
 
@@ -6,24 +6,24 @@ public class Automaton {
 
     private String name;
     private HashMap<String, State> states;
+    private State startState;
 
     public Automaton(String name) {
         this.name = name;
+        this.states = new HashMap<>();
     }
 
     public String getName() {
         return this.name;
     }
 
-    /**
-     * @param c the input character
-     * @return <c>true</c> when the input is accepted,
-     * <c>false</c> when it is rejected from an accepting state,
-     * <c>null</c> when it is rejected from a non-accepting state.
-     */
-    Boolean offer(char c) {
-        return false;
-    }
+	public State getStartState() {
+		if (this.startState == null) {
+			this.startState = this.states.values().stream().filter(
+					s -> s.isStart()).findFirst().get();
+		}
+		return this.startState;
+	}
 
     /**
       * Creates a new state if it does not already exist.
@@ -36,6 +36,14 @@ public class Automaton {
         }
         State state = new State(name);
         return this.states.put(name, state);
+    }
+    
+    public State addState(State state) {
+    	return this.states.put(state.getName(), state);
+    }
+    
+    public State getState(String name) {
+    	return this.states.get(name);
     }
 
     public void addTransition(String startStateName, String endStateName,
@@ -77,4 +85,5 @@ public class Automaton {
         }
         return false;
     }
+
 }

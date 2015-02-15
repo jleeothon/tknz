@@ -1,4 +1,4 @@
-package core;
+package tknz.core;
 
 import java.util.List;
 
@@ -16,8 +16,12 @@ public class State {
         return this.isStart;
     }
 
-    public boolean isStop() {
+    public boolean isAccepting() {
         return this.isStop;
+    }
+    
+    public String getName() {
+    	return name;
     }
 
     /**

@@ -1,7 +1,7 @@
-// Generated from Tokenizer.g4 by ANTLR 4.5
+// Generated from Tknz.g4 by ANTLR 4.5
 
 
-package grammar;
+package tknz.grammar;
 
 
 import org.antlr.v4.runtime.Lexer;
@@ -14,7 +14,7 @@ import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.misc.*;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
-public class TokenizerLexer extends Lexer {
+public class TknzLexer extends Lexer {
 	static { RuntimeMetaData.checkVersion("4.5", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
@@ -75,13 +75,13 @@ public class TokenizerLexer extends Lexer {
 	}
 
 
-	public TokenizerLexer(CharStream input) {
+	public TknzLexer(CharStream input) {
 		super(input);
 		_interp = new LexerATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
 	@Override
-	public String getGrammarFileName() { return "Tokenizer.g4"; }
+	public String getGrammarFileName() { return "Tknz.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }

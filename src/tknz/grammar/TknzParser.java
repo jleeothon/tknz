@@ -1,7 +1,7 @@
-// Generated from Tokenizer.g4 by ANTLR 4.5
+// Generated from Tknz.g4 by ANTLR 4.5
 
 
-package grammar;
+package tknz.grammar;
 
 
 import org.antlr.v4.runtime.atn.*;
@@ -14,7 +14,7 @@ import java.util.Iterator;
 import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
-public class TokenizerParser extends Parser {
+public class TknzParser extends Parser {
 	static { RuntimeMetaData.checkVersion("4.5", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
@@ -73,7 +73,7 @@ public class TokenizerParser extends Parser {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "Tokenizer.g4"; }
+	public String getGrammarFileName() { return "Tknz.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -84,7 +84,7 @@ public class TokenizerParser extends Parser {
 	@Override
 	public ATN getATN() { return _ATN; }
 
-	public TokenizerParser(TokenStream input) {
+	public TknzParser(TokenStream input) {
 		super(input);
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
@@ -101,11 +101,11 @@ public class TokenizerParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_s; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof TokenizerListener ) ((TokenizerListener)listener).enterS(this);
+			if ( listener instanceof TknzListener ) ((TknzListener)listener).enterS(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof TokenizerListener ) ((TokenizerListener)listener).exitS(this);
+			if ( listener instanceof TknzListener ) ((TknzListener)listener).exitS(this);
 		}
 	}
 
@@ -144,8 +144,8 @@ public class TokenizerParser extends Parser {
 	}
 
 	public static class AutomatonContext extends ParserRuleContext {
-		public TerminalNode AUTOMATON() { return getToken(TokenizerParser.AUTOMATON, 0); }
-		public TerminalNode Identifier() { return getToken(TokenizerParser.Identifier, 0); }
+		public TerminalNode AUTOMATON() { return getToken(TknzParser.AUTOMATON, 0); }
+		public TerminalNode Identifier() { return getToken(TknzParser.Identifier, 0); }
 		public List<AutomatonModifiersContext> automatonModifiers() {
 			return getRuleContexts(AutomatonModifiersContext.class);
 		}
@@ -164,11 +164,11 @@ public class TokenizerParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_automaton; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof TokenizerListener ) ((TokenizerListener)listener).enterAutomaton(this);
+			if ( listener instanceof TknzListener ) ((TknzListener)listener).enterAutomaton(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof TokenizerListener ) ((TokenizerListener)listener).exitAutomaton(this);
+			if ( listener instanceof TknzListener ) ((TknzListener)listener).exitAutomaton(this);
 		}
 	}
 
@@ -225,8 +225,8 @@ public class TokenizerParser extends Parser {
 	}
 
 	public static class StateContext extends ParserRuleContext {
-		public TerminalNode STATE() { return getToken(TokenizerParser.STATE, 0); }
-		public TerminalNode Identifier() { return getToken(TokenizerParser.Identifier, 0); }
+		public TerminalNode STATE() { return getToken(TknzParser.STATE, 0); }
+		public TerminalNode Identifier() { return getToken(TknzParser.Identifier, 0); }
 		public List<StateModifierContext> stateModifier() {
 			return getRuleContexts(StateModifierContext.class);
 		}
@@ -245,11 +245,11 @@ public class TokenizerParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_state; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof TokenizerListener ) ((TokenizerListener)listener).enterState(this);
+			if ( listener instanceof TknzListener ) ((TknzListener)listener).enterState(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof TokenizerListener ) ((TokenizerListener)listener).exitState(this);
+			if ( listener instanceof TknzListener ) ((TknzListener)listener).exitState(this);
 		}
 	}
 
@@ -318,11 +318,11 @@ public class TokenizerParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_transition; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof TokenizerListener ) ((TokenizerListener)listener).enterTransition(this);
+			if ( listener instanceof TknzListener ) ((TknzListener)listener).enterTransition(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof TokenizerListener ) ((TokenizerListener)listener).exitTransition(this);
+			if ( listener instanceof TknzListener ) ((TknzListener)listener).exitTransition(this);
 		}
 	}
 
@@ -362,21 +362,21 @@ public class TokenizerParser extends Parser {
 	}
 
 	public static class SetTransitionContext extends ParserRuleContext {
-		public TerminalNode WITH() { return getToken(TokenizerParser.WITH, 0); }
-		public TerminalNode StringLiteral() { return getToken(TokenizerParser.StringLiteral, 0); }
-		public TerminalNode GOTO() { return getToken(TokenizerParser.GOTO, 0); }
-		public TerminalNode Identifier() { return getToken(TokenizerParser.Identifier, 0); }
+		public TerminalNode WITH() { return getToken(TknzParser.WITH, 0); }
+		public TerminalNode StringLiteral() { return getToken(TknzParser.StringLiteral, 0); }
+		public TerminalNode GOTO() { return getToken(TknzParser.GOTO, 0); }
+		public TerminalNode Identifier() { return getToken(TknzParser.Identifier, 0); }
 		public SetTransitionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_setTransition; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof TokenizerListener ) ((TokenizerListener)listener).enterSetTransition(this);
+			if ( listener instanceof TknzListener ) ((TknzListener)listener).enterSetTransition(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof TokenizerListener ) ((TokenizerListener)listener).exitSetTransition(this);
+			if ( listener instanceof TknzListener ) ((TknzListener)listener).exitSetTransition(this);
 		}
 	}
 
@@ -408,25 +408,25 @@ public class TokenizerParser extends Parser {
 	}
 
 	public static class RangeTransitionContext extends ParserRuleContext {
-		public TerminalNode FROM() { return getToken(TokenizerParser.FROM, 0); }
-		public List<TerminalNode> StringLiteral() { return getTokens(TokenizerParser.StringLiteral); }
+		public TerminalNode FROM() { return getToken(TknzParser.FROM, 0); }
+		public List<TerminalNode> StringLiteral() { return getTokens(TknzParser.StringLiteral); }
 		public TerminalNode StringLiteral(int i) {
-			return getToken(TokenizerParser.StringLiteral, i);
+			return getToken(TknzParser.StringLiteral, i);
 		}
-		public TerminalNode TO() { return getToken(TokenizerParser.TO, 0); }
-		public TerminalNode GOTO() { return getToken(TokenizerParser.GOTO, 0); }
-		public TerminalNode Identifier() { return getToken(TokenizerParser.Identifier, 0); }
+		public TerminalNode TO() { return getToken(TknzParser.TO, 0); }
+		public TerminalNode GOTO() { return getToken(TknzParser.GOTO, 0); }
+		public TerminalNode Identifier() { return getToken(TknzParser.Identifier, 0); }
 		public RangeTransitionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_rangeTransition; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof TokenizerListener ) ((TokenizerListener)listener).enterRangeTransition(this);
+			if ( listener instanceof TknzListener ) ((TknzListener)listener).enterRangeTransition(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof TokenizerListener ) ((TokenizerListener)listener).exitRangeTransition(this);
+			if ( listener instanceof TknzListener ) ((TknzListener)listener).exitRangeTransition(this);
 		}
 	}
 
@@ -462,18 +462,18 @@ public class TokenizerParser extends Parser {
 	}
 
 	public static class AutomatonModifiersContext extends ParserRuleContext {
-		public TerminalNode IGNORE() { return getToken(TokenizerParser.IGNORE, 0); }
+		public TerminalNode IGNORE() { return getToken(TknzParser.IGNORE, 0); }
 		public AutomatonModifiersContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_automatonModifiers; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof TokenizerListener ) ((TokenizerListener)listener).enterAutomatonModifiers(this);
+			if ( listener instanceof TknzListener ) ((TknzListener)listener).enterAutomatonModifiers(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof TokenizerListener ) ((TokenizerListener)listener).exitAutomatonModifiers(this);
+			if ( listener instanceof TknzListener ) ((TknzListener)listener).exitAutomatonModifiers(this);
 		}
 	}
 
@@ -499,19 +499,19 @@ public class TokenizerParser extends Parser {
 	}
 
 	public static class StateModifierContext extends ParserRuleContext {
-		public TerminalNode START() { return getToken(TokenizerParser.START, 0); }
-		public TerminalNode STOP() { return getToken(TokenizerParser.STOP, 0); }
+		public TerminalNode START() { return getToken(TknzParser.START, 0); }
+		public TerminalNode STOP() { return getToken(TknzParser.STOP, 0); }
 		public StateModifierContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_stateModifier; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof TokenizerListener ) ((TokenizerListener)listener).enterStateModifier(this);
+			if ( listener instanceof TknzListener ) ((TknzListener)listener).enterStateModifier(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof TokenizerListener ) ((TokenizerListener)listener).exitStateModifier(this);
+			if ( listener instanceof TknzListener ) ((TknzListener)listener).exitStateModifier(this);
 		}
 	}
 

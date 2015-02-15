@@ -1,8 +1,8 @@
-grammar Tokenizer;
+grammar Tknz;
 
 @header {
 
-package grammar;
+package tknz.grammar;
 
 }
 
@@ -14,11 +14,7 @@ automaton
 
 state            : stateModifier* STATE Identifier transition*;
 
-transition
-@after {
-    System.out.println("oi!");
-}
-: setTransition | rangeTransition ;
+transition : setTransition | rangeTransition ;
 
 setTransition    : WITH StringLiteral GOTO Identifier ;
 

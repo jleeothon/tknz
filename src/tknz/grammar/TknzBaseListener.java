@@ -1,7 +1,7 @@
-// Generated from Tokenizer.g4 by ANTLR 4.5
+// Generated from Tknz.g4 by ANTLR 4.5
 
 
-package grammar;
+package tknz.grammar;
 
 
 
@@ -11,107 +11,107 @@ import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
 /**
- * This class provides an empty implementation of {@link TokenizerListener},
+ * This class provides an empty implementation of {@link TknzListener},
  * which can be extended to create a listener which only needs to handle a subset
  * of the available methods.
  */
-public class TokenizerBaseListener implements TokenizerListener {
+public class TknzBaseListener implements TknzListener {
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterS(TokenizerParser.SContext ctx) { }
+	@Override public void enterS(TknzParser.SContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitS(TokenizerParser.SContext ctx) { }
+	@Override public void exitS(TknzParser.SContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAutomaton(TokenizerParser.AutomatonContext ctx) { }
+	@Override public void enterAutomaton(TknzParser.AutomatonContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAutomaton(TokenizerParser.AutomatonContext ctx) { }
+	@Override public void exitAutomaton(TknzParser.AutomatonContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterState(TokenizerParser.StateContext ctx) { }
+	@Override public void enterState(TknzParser.StateContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitState(TokenizerParser.StateContext ctx) { }
+	@Override public void exitState(TknzParser.StateContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTransition(TokenizerParser.TransitionContext ctx) { }
+	@Override public void enterTransition(TknzParser.TransitionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTransition(TokenizerParser.TransitionContext ctx) { }
+	@Override public void exitTransition(TknzParser.TransitionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSetTransition(TokenizerParser.SetTransitionContext ctx) { }
+	@Override public void enterSetTransition(TknzParser.SetTransitionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSetTransition(TokenizerParser.SetTransitionContext ctx) { }
+	@Override public void exitSetTransition(TknzParser.SetTransitionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterRangeTransition(TokenizerParser.RangeTransitionContext ctx) { }
+	@Override public void enterRangeTransition(TknzParser.RangeTransitionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitRangeTransition(TokenizerParser.RangeTransitionContext ctx) { }
+	@Override public void exitRangeTransition(TknzParser.RangeTransitionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAutomatonModifiers(TokenizerParser.AutomatonModifiersContext ctx) { }
+	@Override public void enterAutomatonModifiers(TknzParser.AutomatonModifiersContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAutomatonModifiers(TokenizerParser.AutomatonModifiersContext ctx) { }
+	@Override public void exitAutomatonModifiers(TknzParser.AutomatonModifiersContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterStateModifier(TokenizerParser.StateModifierContext ctx) { }
+	@Override public void enterStateModifier(TknzParser.StateModifierContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitStateModifier(TokenizerParser.StateModifierContext ctx) { }
+	@Override public void exitStateModifier(TknzParser.StateModifierContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
