@@ -1,9 +1,10 @@
 grammar Tknz;
 
 @header {
-
 package tknz.grammar;
 
+import java.util.TreeMap;
+import tknz.core.Automaton;
 }
 
 /** Defines one or more automatons. */

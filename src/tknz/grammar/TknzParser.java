@@ -1,8 +1,6 @@
 // Generated from Tknz.g4 by ANTLR 4.5
 
-
 package tknz.grammar;
-
 
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
