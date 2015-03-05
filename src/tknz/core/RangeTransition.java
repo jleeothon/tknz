@@ -18,5 +18,11 @@ public class RangeTransition extends Transition {
     protected boolean tryOffer(char c) {
         return c >= this.first && c <= this.last;
     }
+    
+    @Override
+    public String toString() {
+    	return String.format("from %c to %c goto %s", this.first, this.last,
+    			this.getDestination());
+    }
 
 }

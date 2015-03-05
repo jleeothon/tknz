@@ -6,11 +6,11 @@ automaton Integer
 
 automaton String
     start state initial-quote
-        with '"' goto B
+        with '"' goto characters
     state characters
-        from "A" to "B" goto B
-        from "a" to "b" goto B
-        from "0" to "9" goto B
+        from "A" to "B" goto characters
+        from "a" to "b" goto characters
+        from "0" to "9" goto characters
         with '"' goto end-quote
     stop state end-quote
 

@@ -1,5 +1,6 @@
 package tknz.core;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class State {
@@ -10,6 +11,9 @@ public class State {
 
     public State(String name) {
         this.name = name;
+        this.isStart = false;
+        this.isStop = false;
+        this.transitions = new LinkedList<Transition>();
     }
 
     public boolean isStart() {
@@ -61,7 +65,16 @@ public class State {
     }
 
     public void addTransition(Transition transition) {
-        // TODO implement
+        this.transitions.add(transition);
     }
+    
+    @Override
+    public String toString() {
+    	return this.name;
+    }
+
+	public Iterable<Transition> getTransitions() {
+		return this.transitions;
+	}
 
 }

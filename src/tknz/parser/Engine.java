@@ -9,6 +9,7 @@ import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 
+import tknz.core.Automaton;
 import tknz.grammar.TknzLexer;
 import tknz.grammar.TknzParser;
 
@@ -47,9 +48,11 @@ public class Engine {
 		TknzParser parser = new TknzParser(tokens);
 		ParseTree tree = parser.s();
 		ParseTreeWalker walker = new ParseTreeWalker();
-		Tokenizer tokenizer = new Tokenizer();
-		walker.walk(new StateListener(tokenizer), tree);
-		walker.walk(new TransitionListener(tokenizer), tree);
+		walker.walk(new StateListener(this.tokenizer), tree);
+		walker.walk(new TransitionListener(this.tokenizer), tree);
+		for (Automaton automaton : this.tokenizer.automatons.values()) {
+			System.out.println(automaton.toVerboseString());
+		}
 	}
 	
 	public void parse() throws IOException {

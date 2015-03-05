@@ -1,6 +1,7 @@
 package tknz.core;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class Automaton {
 
@@ -44,10 +45,11 @@ public class Automaton {
      * @return <code>true</code> if the state was added
      */
     public boolean offerState(State state) {
+    	String name = state.getName();
     	if (this.states.containsKey(name)) {
     		return false;
     	}
-    	this.states.put(state.getName(), state);
+    	this.states.put(name, state);
     	return true;
     }
     
@@ -93,6 +95,27 @@ public class Automaton {
             }
         }
         return false;
+    }
+    
+    @Override
+    public String toString() {
+    	return this.name;
+    }
+    
+    public String toVerboseString() {
+    	StringBuilder builder = new StringBuilder();
+    	builder.append(this.name);
+    	for (State state : this.states.values()) {
+    		builder.append("  ");
+    		builder.append(state.getName());
+    		builder.append('\n');
+    		for (Transition transition : state.getTransitions()) {
+    			builder.append("    ");
+    			builder.append(transition.toString());
+    			builder.append('\n');
+    		}
+    	}
+    	return builder.toString();
     }
 
 }

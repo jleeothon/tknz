@@ -5,7 +5,7 @@ import java.util.TreeMap;
 import tknz.core.Automaton;
 
 public class Tokenizer {
-	protected TreeMap<String, Automaton> automatons;
+	protected TreeMap<String, Automaton> automatons; // TODO this needs to be a List!
 	private int warningCount;
 	private int errorCount;
 

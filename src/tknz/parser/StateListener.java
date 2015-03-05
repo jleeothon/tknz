@@ -24,7 +24,7 @@ public class StateListener extends BaseListener {
 		String identifier = ctx.Identifier().getText();
 		this.currentAutomaton = new Automaton(identifier);
 		if (this.tokenizer.automatons.putIfAbsent(
-				this.currentAutomaton.getName(), this.currentAutomaton) == null) {
+				this.currentAutomaton.getName(), this.currentAutomaton) != null) {
 			this.tokenizer.giveWarning("Automaton repeated: %s",
 					this.currentAutomaton.getName());
 		}
@@ -34,7 +34,7 @@ public class StateListener extends BaseListener {
 
 	@Override
 	public void enterState(TknzParser.StateContext ctx) {
-		this.currentState = new State(ctx.getText());
+		this.currentState = new State(ctx.Identifier().getText());
 		if (!this.currentAutomaton.offerState(this.currentState)) {
 			this.tokenizer.giveError("Repeated state '%s' in automaton %s",
 					this.currentState.getName(),
