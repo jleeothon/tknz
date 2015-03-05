@@ -23,8 +23,7 @@ public class StateListener extends BaseListener {
 	public void enterAutomaton(TknzParser.AutomatonContext ctx) {
 		String identifier = ctx.Identifier().getText();
 		this.currentAutomaton = new Automaton(identifier);
-		if (this.tokenizer.automatons.putIfAbsent(
-				this.currentAutomaton.getName(), this.currentAutomaton) != null) {
+		if (this.tokenizer.automatons.add(this.currentAutomaton)) {
 			this.tokenizer.giveWarning("Automaton repeated: %s",
 					this.currentAutomaton.getName());
 		}

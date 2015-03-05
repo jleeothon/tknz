@@ -1,16 +1,17 @@
 package tknz.parser;
 
-import java.util.TreeMap;
+import java.util.LinkedList;
+import java.util.List;
 
 import tknz.core.Automaton;
 
 public class Tokenizer {
-	protected TreeMap<String, Automaton> automatons; // TODO this needs to be a List!
+	protected List<Automaton> automatons; // TODO this needs to be a List!
 	private int warningCount;
 	private int errorCount;
 
 	public Tokenizer() {
-		this.automatons = new TreeMap<>();
+		this.automatons = new LinkedList<>();
 		this.warningCount = 0;
 		this.errorCount = 0;
 	}

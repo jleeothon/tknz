@@ -50,7 +50,7 @@ public class Engine {
 		ParseTreeWalker walker = new ParseTreeWalker();
 		walker.walk(new StateListener(this.tokenizer), tree);
 		walker.walk(new TransitionListener(this.tokenizer), tree);
-		for (Automaton automaton : this.tokenizer.automatons.values()) {
+		for (Automaton automaton : this.tokenizer.automatons) {
 			System.out.println(automaton.toVerboseString());
 		}
 	}

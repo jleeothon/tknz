@@ -22,7 +22,8 @@ public class TransitionListener extends BaseListener {
 	public void enterAutomaton(TknzParser.AutomatonContext ctx) {
 		String name = ctx.Identifier().getText();
 		assert(name != null);
-		this.currentAutomaton = this.tokenizer.automatons.get(name);
+		this.currentAutomaton = this.tokenizer.automatons.stream().filter(
+				a -> a.getName().equals(name)).findAny().get();
 	}
 
 	@Override
