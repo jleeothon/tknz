@@ -12,14 +12,14 @@ import org.antlr.v4.runtime.tree.ParseTreeWalker;
 import tknz.grammar.TknzLexer;
 import tknz.grammar.TknzParser;
 
-public class TknzEngine {
+public class Engine {
 	
-	TknzTokenizer tokenizer;
+	Tokenizer tokenizer;
 	private Character next;
 	private InputStreamReader input;
 	
-	public TknzEngine(InputStreamReader input) {
-		this.tokenizer = new TknzTokenizer();
+	public Engine(InputStreamReader input) {
+		this.tokenizer = new Tokenizer();
 		if (input == null) {
 			throw new NullPointerException("Input stream is null");
 		}
@@ -47,8 +47,9 @@ public class TknzEngine {
 		TknzParser parser = new TknzParser(tokens);
 		ParseTree tree = parser.s();
 		ParseTreeWalker walker = new ParseTreeWalker();
-		walker.walk(new StateListener(this.tokenizer), tree);
-		walker.walk(new TransitionListener(this.tokenizer), tree);
+		Tokenizer tokenizer = new Tokenizer();
+		walker.walk(new StateListener(tokenizer), tree);
+		walker.walk(new TransitionListener(tokenizer), tree);
 	}
 	
 	public void parse() throws IOException {
