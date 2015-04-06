@@ -45,7 +45,6 @@ public class Engine {
 		if (this.nextCharacter == characters.size()) {
 			try {
 				int c = this.input.read();
-				System.out.printf("just read %c\n", (char)c);
 				if (c == -1) {
 					return null;
 				} else {
@@ -59,12 +58,10 @@ public class Engine {
 	}
 
 	private void rewind() {
-		System.out.println("Rewind!");
 		this.nextCharacter = 0;
 	}
 
 	private void clear() {
-		System.out.println("Clear!");
 		Character c = this.characters.get(this.characters.size() - 1);
 		this.characters.clear();
 		this.characters.add(c);
