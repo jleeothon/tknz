@@ -1,22 +1,35 @@
 package tknz.core;
 
+import java.util.Map;
 import java.util.HashMap;
 
 public class Automaton {
 
-    private String name;
-    private HashMap<String, State> states;
+    private final String name;
+    private final Map<String, State> states;
     private State startState;
 
+    /**
+     * Constructs a new automaton.
+     * @param name - the name of this automaton
+     */
     public Automaton(String name) {
         this.name = name;
         this.states = new HashMap<>();
     }
 
+    /**
+     * @return the name of this automaton
+     */
     public String getName() {
         return this.name;
     }
 
+    /**
+     * Gets the first state that can be a start state. Well-formed automatons
+     * should only have one such.
+     * Note, this implementation is lazy.
+     */
 	public State getStartState() {
 		if (this.startState == null) {
 			this.startState = this.states.values().stream().filter(
@@ -52,14 +65,18 @@ public class Automaton {
     	return true;
     }
     
+    /**
+     * Retrieves a state by the name.
+     * @param name - name of the state
+     */
     public State getState(String name) {
     	return this.states.get(name);
     }
 
-    public void addTransition(String startStateName, String endStateName,
+    public void addTransition(String sourceStateName, String destStateName,
             char startChar, char endChar) throws Exception {
-        State startState = this.states.get(startStateName);
-        State endState = this.states.get(endStateName);
+        State startState = this.states.get(sourceStateName);
+        State endState = this.states.get(destStateName);
         if (this.repeated(startChar) || this.repeated(endChar)) {
             // TODO fall gracefully
             throw new Exception(String.format(
@@ -71,10 +88,10 @@ public class Automaton {
         startState.addTransition(transition);
     }
 
-    public void addTransition(String startStateName, String endStateName,
+    public void addTransition(String sourceStateName, String destStateName,
             String charSet) {
-        State startState = this.states.get(startStateName);
-        State endState = this.states.get(endStateName);
+        State startState = this.states.get(sourceStateName);
+        State endState = this.states.get(destStateName);
         if (this.repeated(charSet)) {
             // TODO throw fall gracefully
         }
@@ -96,26 +113,41 @@ public class Automaton {
         return false;
     }
 
+    /**
+     * @return <c>true</c> if the automaton has at least one starting state
+     */
     public boolean hasStartingState() {
         boolean b = this.states.values().stream().anyMatch(x -> x.isStart());
         return b;
     }
 
+    /**
+     * @return <c>true</c> if the automaton has at least one accepting state
+     */
     public boolean hasAcceptingState() {
         boolean b = this.states.values().stream().anyMatch(x -> x.isAccepting());
         return b;
     }
 
+    /**
+     * @return <c>true</c> if the automaton has at least on state which is both starting and accepting
+     */
     public boolean canAcceptEmpty() {
         boolean b = this.states.values().stream().anyMatch(x -> x.isStart() && x.isAccepting());
         return b;
     }
     
+    /**
+     * @return the name of this automaton
+     */
     @Override
     public String toString() {
     	return this.name;
     }
     
+    /**
+     * @return 
+     */
     public String toVerboseString() {
     	StringBuilder builder = new StringBuilder();
     	builder.append(this.name);

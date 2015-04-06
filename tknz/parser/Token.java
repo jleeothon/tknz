@@ -12,7 +12,7 @@ public class Token {
 	
 	@Override
 	public String toString() {
-		return String.format("(%s) %s", this.type, this.text); 
+		return String.format("(%s)<%s>", this.type, this.text); 
 	}
 
 }

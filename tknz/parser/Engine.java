@@ -19,9 +19,9 @@ import tknz.grammar.TknzParser;
 
 public class Engine {
 	
-	Tokenizer tokenizer;
+	private Tokenizer tokenizer;
 
-	private ArrayList<Character> characters;
+	private List<Character> characters;
 
 	private int nextCharacter;
 
@@ -34,7 +34,7 @@ public class Engine {
 		}
 		this.input = input;
 		this.nextCharacter = 0;
-		this.characters = new ArrayList<>();
+		this.characters = new ArrayList<Character>();
 	}
 	
 	/**
@@ -89,7 +89,7 @@ public class Engine {
 	}
 	
 	public Collection<Token> parse() throws EOFException {
-		List<Token> tokens = new LinkedList<>();
+		LinkedList<Token> tokens = new LinkedList<>();
 		boolean eof = false;
 		while (!eof) {
 			boolean success = false;
@@ -127,7 +127,7 @@ public class Engine {
 	  * successfully classified.
 	  */
 	private void handleResponse(AutomatonResponse response, boolean eof,
-			List<Token> tokens, StringBuilder text, AutomatonRunner runner)
+			LinkedList<Token> tokens, StringBuilder text, AutomatonRunner runner)
 			throws EOFException {
 		assert response != null;
 		assert response != AutomatonResponse.CONTINUE;

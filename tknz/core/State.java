@@ -4,11 +4,17 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class State {
-    private String name;
-    private boolean isStart;
-    private boolean isStop;
-    private List<Transition> transitions;
 
+    private final String name;
+    private final boolean isStart;
+    private final boolean isStop;
+    private final List<Transition> transitions;
+
+    /**
+     * @param name - the name of this state
+     * @param isStart - whether or not this state is the start state
+     * @param isStop - whether or not this state is an accepting state
+     */
     public State(String name, boolean isStart, boolean isStop) {
         this.name = name;
         this.isStart = isStart;
@@ -16,14 +22,23 @@ public class State {
         this.transitions = new LinkedList<Transition>();
     }
 
+    /**
+     * @return whether or not this state is marked as a state
+     */
     public boolean isStart() {
         return this.isStart;
     }
 
+    /**
+     * @return whether or not this state is an accepting state
+     */
     public boolean isAccepting() {
         return this.isStop;
     }
     
+    /**
+     * @return the name of this state
+     */
     public String getName() {
     	return name;
     }
@@ -56,7 +71,7 @@ public class State {
       */
     public State tryOffer(char c) {
         for (Transition transition : this.transitions) {
-            State result = transition.offer(c);
+            State result = transition.transit(c);
             if (result != null) {
                 return result;
             }

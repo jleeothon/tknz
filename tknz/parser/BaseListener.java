@@ -10,7 +10,7 @@ import tknz.core.State;
 import tknz.core.Transition;
 import tknz.grammar.TknzBaseListener;
 
-public class BaseListener extends TknzBaseListener {
+public abstract class BaseListener extends TknzBaseListener {
 	protected Tokenizer tokenizer;
 	protected State currentState;
 	protected boolean currentStateStarts;
