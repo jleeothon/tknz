@@ -6,9 +6,32 @@ A DFA-based tokenizer
 
 As a computational theory student, you usually learn to write deterministic finite state automatons to represent regular grammars and recognize regular languages. However, when using a production-level lexer, grammars are written in a significantly different way: using some sort of regular expressions. `tknz` narrows the breach between these two approaches at regular grammars by providing a language that specifically calls for writing deterministic finite-state automatons.
 
+For example, for a real number:
+
+- Typical regular expression:
+
+```Ruby
+/[1-9][0-9]+(\.[0-9]+)?/
+```
+
+- tknz syntax, closer to what you learn as a beginner student in theory of computation class:
+
+```
+Automaton Number
+  start state first-digit
+    with "123456789" goto next-digits
+  stop state next-digits
+    with "0123456789" goto next-digits
+    with "." goto dot
+  state dot
+    with "0123456789" goto decimals
+  stop state decimals
+    with "0123456789" goto decimals
+```
+
 ### Installation
 
-Install Java 1.6 or higher. Don't forget the JDK.
+Install Java 8 JRE. Don't forget the JDK.
 
 `tnkz` depends on ANTLR v4. Download `antlr-4.5-complete.jar` from the [ANTLR official site](https://theantlrguy.atlassian.net/wiki/display/ANTLR4/Getting+Started+with+ANTLR+v4). You don't need to follow the full instructions because the `tknz` workflow has been customized for uniformity.
 
@@ -31,7 +54,7 @@ tknz
 ...
 ```
 
-**Note**. Right now, the build system has only been readied for Windows (yes, you can hit me now).
+**Note**. Right now, the build system has only been readied for Windows (yes, you can hit me now :stuck_out_tongue_closed_eyes:).
 
 `cd` to the `tknz` directory. Then set your environment:
 
