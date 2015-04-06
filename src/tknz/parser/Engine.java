@@ -145,7 +145,8 @@ public class Engine {
 				this.rewind();
 			}
 		} else if (response == AutomatonResponse.ACCEPT) {
-			tokens.add(new Token(text.toString(), runner.automaton.getName()));
+			String t = eof ? text.toString() : text.substring(0, text.length() - 1);
+			tokens.add(new Token(t, runner.automaton.getName()));
 			this.clear();
 		}
 	}

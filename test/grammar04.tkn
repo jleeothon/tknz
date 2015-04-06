@@ -10,8 +10,9 @@ automaton String
     state characters
         from "A" to "Z" goto characters
         from "a" to "z" goto characters
-        from "0" to "9" goto characters        
-        with '" ' goto end-quote
+        from "0" to "9" goto characters
+        with " " goto characters
+        with '"' goto end-quote
     stop state end-quote
 
 // extraneous comments everywhere!
