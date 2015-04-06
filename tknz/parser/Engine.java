@@ -82,9 +82,6 @@ public class Engine {
 		ParseTreeWalker walker = new ParseTreeWalker();
 		walker.walk(new StateListener(this.tokenizer), tree);
 		walker.walk(new TransitionListener(this.tokenizer), tree);
-		for (Automaton automaton : this.tokenizer.automatons) {
-			System.out.println(automaton.toVerboseString());
-		}
 		int errorCount = this.tokenizer.errorCount();
 		int warningCount = this.tokenizer.warningCount();
 		System.out.printf("error count %d, warningCount %d\n", errorCount, warningCount);
@@ -99,7 +96,6 @@ public class Engine {
 			StringBuilder text = new StringBuilder();
 			for (Automaton a : this.tokenizer.automatons) {
 				text.setLength(0);
-				System.out.printf("Trying with %s\n", a.getName());
 				AutomatonRunner runner = new AutomatonRunner(a);
 				AutomatonResponse response = null;
 				do {

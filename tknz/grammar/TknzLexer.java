@@ -1,4 +1,4 @@
-// Generated from Tknz.g4 by ANTLR 4.5
+// Generated from tknz\grammar\Tknz.g4 by ANTLR 4.5
 
 package tknz.grammar;
 
