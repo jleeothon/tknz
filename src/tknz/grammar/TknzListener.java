@@ -2,6 +2,9 @@
 
 package tknz.grammar;
 
+import java.util.TreeMap;
+import tknz.core.Automaton;
+
 import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -90,4 +93,24 @@ public interface TknzListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitStateModifier(TknzParser.StateModifierContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TknzParser#start}.
+	 * @param ctx the parse tree
+	 */
+	void enterStart(TknzParser.StartContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TknzParser#start}.
+	 * @param ctx the parse tree
+	 */
+	void exitStart(TknzParser.StartContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TknzParser#stop}.
+	 * @param ctx the parse tree
+	 */
+	void enterStop(TknzParser.StopContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TknzParser#stop}.
+	 * @param ctx the parse tree
+	 */
+	void exitStop(TknzParser.StopContext ctx);
 }

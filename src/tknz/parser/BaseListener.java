@@ -13,6 +13,8 @@ import tknz.grammar.TknzBaseListener;
 public class BaseListener extends TknzBaseListener {
 	protected Tokenizer tokenizer;
 	protected State currentState;
+	protected boolean currentStateStarts;
+	protected boolean currentStateStops;
 	protected Automaton currentAutomaton;
 	protected Transition currentTransition;
 	protected Logger logger;
@@ -20,6 +22,8 @@ public class BaseListener extends TknzBaseListener {
 	public BaseListener(Tokenizer tokenizer) {
 		super();
 		this.tokenizer = tokenizer;
+		this.currentStateStarts = false;
+		this.currentStateStops = false;
 		this.logger = Logger.getLogger(this.getClass().getName());
 		this.logger.setLevel(Level.ALL);
 		ConsoleHandler handler = new ConsoleHandler();

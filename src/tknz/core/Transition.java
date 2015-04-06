@@ -18,7 +18,7 @@ public abstract class Transition {
 
     protected abstract boolean tryOffer(char c);
 
-    public State offer(char c) {
+    public final State offer(char c) {
         if (this.tryOffer(c)) {
             return this.destination;
         } else {

@@ -1,7 +1,6 @@
 package tknz.core;
 
 import java.util.HashMap;
-import java.util.Map;
 
 public class Automaton {
 
@@ -31,11 +30,11 @@ public class Automaton {
       * @param name - the name of the state to put
       * @return the existing or newly made <code>State</code>
       */
-    public State addState(String name) {
+    public State addState(String name, boolean isStart, boolean isStop) {
         if (this.states.containsKey(name)) {
             return this.states.get(name);
         }
-        State state = new State(name);
+        State state = new State(name, isStart, isStop);
         return this.states.put(name, state);
     }
     
@@ -96,6 +95,21 @@ public class Automaton {
         }
         return false;
     }
+
+    public boolean hasStartingState() {
+        boolean b = this.states.values().stream().anyMatch(x -> x.isStart());
+        return b;
+    }
+
+    public boolean hasAcceptingState() {
+        boolean b = this.states.values().stream().anyMatch(x -> x.isAccepting());
+        return b;
+    }
+
+    public boolean canAcceptEmpty() {
+        boolean b = this.states.values().stream().anyMatch(x -> x.isStart() && x.isAccepting());
+        return b;
+    }
     
     @Override
     public String toString() {
@@ -105,6 +119,7 @@ public class Automaton {
     public String toVerboseString() {
     	StringBuilder builder = new StringBuilder();
     	builder.append(this.name);
+        builder.append('\n');
     	for (State state : this.states.values()) {
     		builder.append("  ");
     		builder.append(state.getName());

@@ -1,5 +1,5 @@
 automaton Integer
-     state A
+     start state A
         from "0" to "9" goto B
      state B
         from "0" to "9" goto B

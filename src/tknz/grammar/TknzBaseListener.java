@@ -2,6 +2,9 @@
 
 package tknz.grammar;
 
+import java.util.TreeMap;
+import tknz.core.Automaton;
+
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.misc.NotNull;
@@ -110,6 +113,30 @@ public class TknzBaseListener implements TknzListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitStateModifier(TknzParser.StateModifierContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterStart(TknzParser.StartContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitStart(TknzParser.StartContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterStop(TknzParser.StopContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitStop(TknzParser.StopContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

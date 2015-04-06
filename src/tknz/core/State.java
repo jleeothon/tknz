@@ -9,10 +9,10 @@ public class State {
     private boolean isStop;
     private List<Transition> transitions;
 
-    public State(String name) {
+    public State(String name, boolean isStart, boolean isStop) {
         this.name = name;
-        this.isStart = false;
-        this.isStop = false;
+        this.isStart = isStart;
+        this.isStop = isStop;
         this.transitions = new LinkedList<Transition>();
     }
 

@@ -1,9 +1,11 @@
 package tknz.exec;
  
+import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Collection;
 
 import org.antlr.v4.runtime.*; 
 
@@ -13,6 +15,7 @@ public class Main {
 	public static void main(String[] args) {
 		ANTLRInputStream grammar = null;
 		InputStreamReader input = null;
+		boolean success = false;
 		
 		try {
 			grammar = new ANTLRInputStream(new FileInputStream(args[0]));
@@ -32,6 +35,19 @@ public class Main {
 		}
 		
 		Engine engine = new Engine(input);
-		engine.load(grammar);
+		success = engine.load(grammar);
+		
+		if (!success) {
+			System.exit(1);
+		}
+		
+		try {
+			Collection<tknz.parser.Token> tokens = engine.parse();
+			for (tknz.parser.Token token : tokens) {
+				System.out.println(token.toString());
+			}
+		} catch (EOFException e) {
+			System.err.printf(e.getMessage());
+		}
 	}
 }

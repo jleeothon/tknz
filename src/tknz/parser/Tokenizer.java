@@ -6,7 +6,7 @@ import java.util.List;
 import tknz.core.Automaton;
 
 public class Tokenizer {
-	protected List<Automaton> automatons; // TODO this needs to be a List!
+	protected List<Automaton> automatons;
 	private int warningCount;
 	private int errorCount;
 

@@ -22,7 +22,13 @@ setTransition    : WITH StringLiteral GOTO Identifier ;
 rangeTransition  : FROM StringLiteral TO StringLiteral GOTO Identifier ;
 
 automatonModifiers : IGNORE ;
-stateModifier      : START | STOP ;
+
+stateModifier      : start | stop ;
+
+start : START ;
+
+stop : STOP ;
+
 
 AUTOMATON : 'automaton' ;
 STATE     : 'state' ;

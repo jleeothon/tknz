@@ -8,9 +8,6 @@ import tknz.grammar.TknzParser;
 /**
  * Creates transitions assuming that automatons and states have been registered
  * in the a {@link TknzTokenizer}.
- * 
- * @author Johnny
- *
  */
 public class TransitionListener extends BaseListener {
 
@@ -76,6 +73,7 @@ public class TransitionListener extends BaseListener {
 		this.currentTransition = new RangeTransition(destination, first, last);
 	}
 	
+	@Override
 	public void exitTransition(TknzParser.TransitionContext ctx) {
 		this.currentState.addTransition(this.currentTransition);
 	}

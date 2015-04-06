@@ -1,17 +1,17 @@
 automaton Integer
-     state A // hey
+    start state A // hey
         from "0" to "9" goto B
-     state B // hello
+    stop state B // hello
         from "0" to "9" goto B
 
 automaton String
     start state initial-quote
         with '"' goto characters
     state characters
-        from "A" to "B" goto characters
-        from "a" to "b" goto characters
-        from "0" to "9" goto characters
-        with '"' goto end-quote
+        from "A" to "Z" goto characters
+        from "a" to "z" goto characters
+        from "0" to "9" goto characters        
+        with '" ' goto end-quote
     stop state end-quote
 
 // extraneous comments everywhere!
@@ -22,3 +22,9 @@ automaton Identifier
     stop state 1
         from "A" to "Z" goto 1
         from "a" to "z" goto 1
+
+automaton Whitespace
+    start state 0
+        with " " goto 1
+    stop state 1
+        with " " goto 1
