@@ -11,7 +11,7 @@ For example, for a real number:
 - Typical regular expression:
 
 ```Ruby
-/[1-9][0-9]+(\.[0-9]+)?/
+/[1-9][0-9]*(\.[0-9]+)?/
 ```
 
 - tknz syntax, closer to what you learn as a beginner student in theory of computation class:
